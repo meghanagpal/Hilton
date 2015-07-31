@@ -1,0 +1,149 @@
+<!doctype html>
+<%@ Language="JavaScript" %>
+<!-- #include virtual="/_scripts/_tracking.asp" -->
+<!-- #include virtual="/usc/_include/uscGlobals.asp" -->
+<%
+Response.Expires = -1;
+
+var szURL = "/usc/_bt_appredir.asp";
+
+var pApplyNowSignature = new Parameters( szURL, null );
+	pApplyNowSignature.Add("app=UNSOL");
+	pApplyNowSignature.AddQS();
+	pApplyNowSignature.Add("app=UNSOL&sc=FPSHC8E4&m=Y2T6111111W&B=S&ID=3004&uc=DG7");
+	pApplyNowSignature.Add( "TID", "133075" );
+
+var szTenTwelve = GetAffiliate();
+
+if( szTenTwelve != null && szTenTwelve != " " && szTenTwelve != undefined )
+{
+	var szMCode = InsertAffiliate("Y2T6111111W", szTenTwelve);
+	pApplyNowSignature.Add("m", szMCode);
+}
+
+pApplyNowSignature.Remove( "ef_id" );
+
+var szMyQueryString = Request.ServerVariables("QUERY_STRING");
+
+%>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Dual Card</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/vendor/modernizr-2.8.3.min.js"></script></head>
+    <header class="wrapper nav">
+    <a class="nav" href="mobile.html?<%= szMyQueryString %>"><img src="img/nav.png" alt="Citi Reserve Card"> </a>
+    <a class="right" href="javascript:void(0);"><img src="img/HHonors_Logo.png" alt="Citi Reserve Card"> </a>
+    <a class="right citi" href="javascript:void(0);"><img src="img/Citi_logo.png" alt="Citi Reserve Card"> </a>
+
+
+    </header><body>
+<div class="hero-image">
+<div class="wrapper">
+<!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+   <section class="signature">
+   <img src="img/signature_card.png" alt="Citi Reserve Card">
+       <div class="description">
+       <article>
+           <p class="title">CITI<sup>&reg;</sup> HILTON HHONORS<sup>&trade;</sup><br class="landscape"> VISA SIGNATURE<sup>&reg;</sup> CARD</p>
+           <h1 class="card">40,000</h1>
+           <h2 class="card">HHonors<sup>&trade;</sup> Bonus Points</h2>
+           <p class="card">Earn 40,000 Hilton HHonors<sup>&trade;</sup> Bonus Points after making $1,000 in purchases with your Citi Hilton HHonors<sup>&trade;</sup> Visa Signature<sup>&reg;</sup> Card within the first 4 months after account opening.</p>
+           <h3>NO Annual Fee</h3>
+           <a class="apply" href="<%= pApplyNowSignature.GetStringURL() %>" target="_blank">Apply now</a>
+           <p class="small seepricing"><a href="#PricingInfo">See Pricing and Other Important Information for Details<sup>1</sup></a></p>
+
+   <div class="points">
+           <h1>6</h1>
+           <h2>HHONORS<br> <span class="bonus">Bonus</span><br> <span>Points</span></h2>
+           <p>per $1 spent on hotel stays within the Hilton Portfolio</p>
+   </div>
+   <div class="points">
+           <h1>3</h1>
+           <h2>HHONORS<br> <span class="bonus">Bonus</span><br> <span>Points</span></h2>
+           <p>per $1 spent at supermarkets, drugstores &amp; gas stations</p>
+   </div>
+   <div class="points">
+           <h1>2</h1>
+           <h2>HHONORS<br> <span class="bonus">Bonus</span><br> <span>Points</span></h2>
+           <p>per $1 spent on other purchases</p>
+   </div>
+           <p class="between">In addition to the HHonors Base Points you may earn for your stays.</p>
+       </article>
+       <article class="more">
+           <h1>Silver Status</h1>
+           <p>Enjoy HHonors Silver status as long as you're a Citi Hilton HHonors Visa Signature cardmember.</p>
+           <h1>Upgrade Faster</h1>
+           <p>Fast-track to HHonors Gold status after 4 stays within your first 90 days of cardmembership.</p>
+           <h1>Concierge and More</h1>
+           <p>Visa Signature<sup>&reg;</sup> Benefits, including concierge service.</p>
+           <h1>Bonus Points on Everyday Purchases</h1>
+           <p>Your everyday spending will bring fast rewards.</p>
+           <h1>No Points Cap</h1>
+           <p>There's no limit to the HHonors Bonus Points you can earn.</p>
+       </article>
+       <h3>$0 annual fee</h3>
+           <a class="apply" href="<%= pApplyNowSignature.GetStringURL() %>" target="_blank">Apply now</a>
+           <p class="small desktop">Or call 1-800-514-8565</p>
+           <a href="tel:1-800-514-8565" style="text-decoration:none"><p class="small mobile">Call 800-514-8565</p></a>
+       </div>
+   </section>    </div>
+
+    <footer>
+    <section class="full">
+       <article class="footer-logos"><img class="desktop" src="img/footer-logos.png" alt="footer-logos"><img class="mobile" src="img/footer-logos-mobile.png" alt="footer-logos"></article>
+    </section>
+    <article class="wrapper">
+						<div id="PricingInfo">
+                <p><strong><sup>1</sup>Citi<sup>&reg;</sup> Hilton HHonors<sup>&trade;</sup> Visa Signature<sup>&reg;</sup> Card Pricing and Other Important Information</strong></p>
+				<p><strong>Pricing</strong> <br>
+				The standard variable APR for purchases for the Citi Hilton HHonors Visa Signature card is 15.24%, 17.24%, or 19.24% based on your creditworthiness and also applies to balance transfers. The standard variable APR for cash advances is 25.24%. The variable Penalty APR is up to 29.99% and may be applied if you make a late payment or make a payment that is returned.  Minimum interest charge –$0.50. Cash advance fee – either $10 or 5% of the amount of each cash advance, whichever is greater. Balance transfer fee – either $5 or 3% of the amount of each transfer, whichever is greater. Fee for foreign purchases –3% of the U.S. dollar amount of each purchase made outside the U.S.
+				</p>
+				 <p>
+				<strong>Bonus Points Offer</strong> </br>
+				Hilton HHonors Bonus Points are earned on purchases except returned goods and services, cash advances, convenience checks, transferred balances, credits, fees and interest charges. Hilton HHonors Bonus Points will appear in your Hilton HHonors account within 4-6 weeks after you have met the purchase requirements and do not count toward elite tier qualification. Visit <a href="http://HHonors.com/Terms" target="_blank">HHonors.com/Terms</a> for complete Terms and Conditions.</br>
+				Hilton HHonors Bonus Points offer not available if you have had a Citi Hilton HHonors Visa Signature Card account that was opened or closed in the past 18 months.
+					</p>
+
+				<p>
+				<strong>Citi<sup>&reg;</sup> Hilton HHonors<sup>&trade;</sup> Visa Signature<sup>&reg;</sup> Card Additional Details</strong> </br>
+			Hilton HHonors Bonus Points are earned on purchases except returned goods and services, cash advances, convenience checks, transferred balances, credits, fees and interest charges. Hilton HHonors Bonus Points will appear in your Hilton HHonors account within 4-6 weeks after you have met the purchase requirements and do not count toward elite tier qualification. Visit <a href="http://HHonors.com/Terms" target="_blank">HHonors.com/Terms</a> for complete Terms and Conditions.	</p>
+
+                <p>To qualify for 6 HHonors Bonus Points per dollar spent, purchases including but not limited to charges at hotel restaurants, lounges, retail stores, or spas, must be charged to a cardmember's hotel room bill and settled using the Citi Hilton HHonors Visa card upon checkout. Certain on-property vendors may not permit cardmember to charge to their hotel room, and such charges are not eligible to earn 6 HHonors Bonus Points per dollar spent.  Hotels are responsible for classifying transactions to enable Citi to recognize which ones qualify for 6 HHonors Bonus Points. If Citi receives a transaction without that information, Citi is unable to recognize that it qualifies. Citi reserves the right to determine which transactions qualify for 6 HHonors Bonus Points.  </p>
+
+				<p>Supermarkets are stand-alone merchants that primarily sell a complete line of food merchandise for home consumption. Drugstores are stand-alone merchants that sell prescription and proprietary drugs and non-prescription medicines. Gas stations are stand-alone merchants that sell vehicle fuel for consumer use. Purchases made at warehouse clubs, discount stores, department stores and convenience stores do not qualify. We do not determine whether merchants appropriately identify the transactions, but we do reserve the right to determine which purchases qualify for the 3 HHonors Bonus Points per dollar spent on these categories.</p>
+
+				<p>HHonors Silver status is complimentary as long as you are a Citi Hilton HHonors Visa Signature cardmember.</p>
+
+				<p>You will retain Gold status for the remainder of the calendar year in which it was earned through the end of the following calendar year.  Stays must be charged to the cardmember's hotel room bill and settled using your Citi Hilton HHonors Visa Signature card upon checkout to count towards the fast track requirement. Purchases exclude returned goods and services, cash advances, convenience checks, transferred balances, credits, fees and interest charges.  Allow 4-6 weeks from completion of purchase requirements for your status to be upgraded. For more information on Silver or Gold status and complete Terms and Conditions, visit <a href="http://HHonors.com/Terms" target="_blank">HHonors.com/Terms</a>.</p>
+
+			    <p>Purchases must be charged to the cardmember’s hotel room bill and settled using your Citi Hilton HHonors Visa Signature card upon checkout.  Returned goods and services do not count towards the spend requirement. Certain on-property vendors may not permit cardmember to charge to their hotel room, and such charges do not count towards the spend requirement. Your Citi Hilton HHonors Visa Signature card account must be open and current at the time the points are awarded.  Allow 4 to 6 weeks from December 31 for points to be posted.</p>
+
+				<p>
+				HHonors points will not expire provided that the Hilton HHonors member takes one of the following actions within a 12 consecutive month period (1) stay at a hotel within the Hilton Portfolio, (2) earn HHonors points through any participating partner, (3) purchase HHonors points, or (4) donate points through The Hilton HHonors Giving Back Program. For complete details, visit <a href="http://HHonors.com/Terms" target="_blank">HHonors.com/Terms</a>.
+				</p>
+
+				<p>Hilton HHonors and all trademarks of the Hilton Portfolio are owned by Hilton Worldwide, Inc. or its subsidiaries. </p>
+
+                <p>Hilton HHonors<sup>&trade;</sup> membership, earning of Points &amp; Miles<sup>&trade;</sup> and redemption of Points are subject to HHonors Terms and Conditions, available at <a href="http://HHonors.com/Terms" target="_blank">HHonors.com/Terms</a>. <br>
+                <br>Citibank is not responsible for products or services offered by other companies.</p>
+
+                <p>&copy;<%= glblYearOnly %> Citibank, N.A. Citi, Citibank and Citi with Arc Design are registered service marks of Citigroup Inc.<br><br> Visa<sup>&reg;</sup> is a registered trademark of Visa International Service.</p>
+
+                <p><sup>&trade;</sup> indicates a trademark of Hilton Worldwide.</p>
+				<p>
+                &copy;<%= glblYearOnly %> Hilton Worldwide. All rights reserved.</p>
+            </div>
+				</article>
+    </footer></div>
+
+</body>
+</html>

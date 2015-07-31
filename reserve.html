@@ -1,0 +1,148 @@
+<!doctype html>
+<%@ Language="JavaScript" %>
+<!-- #include virtual="/_scripts/_tracking.asp" -->
+<!-- #include virtual="/usc/_include/uscGlobals.asp" -->
+<%
+Response.Expires = -1;
+
+var szURL = "/usc/_bt_appredir.asp";
+
+var pApplyNowReserve = new Parameters( szURL, null );
+	pApplyNowReserve.Add("app=UNSOL");
+	pApplyNowReserve.AddQS();
+	pApplyNowReserve.Add("app=UNSOL&sc=62HZ1444&m=Y2T6111111W&B=S&ID=3004");
+	pApplyNowReserve.Add( "TID", "133075" );
+
+var szTenTwelve = GetAffiliate();
+
+if( szTenTwelve != null && szTenTwelve != " " && szTenTwelve != undefined )
+{
+	var szMCode = InsertAffiliate("Y2T6111111W", szTenTwelve);
+	pApplyNowReserve.Add("m", szMCode);
+}
+
+pApplyNowReserve.Remove( "ef_id" );
+
+var szMyQueryString = Request.ServerVariables("QUERY_STRING");
+
+%>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Dual Card</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/vendor/modernizr-2.8.3.min.js"></script></head>
+    <header class="wrapper nav">
+    <a class="nav" href="mobile.html?<%= szMyQueryString %>"><img src="img/nav.png" alt="Citi Reserve Card"> </a>
+    <a class="right" href="javascript:void(0);"><img src="img/HHonors_Logo.png" alt="Citi Reserve Card"> </a>
+    <a class="right citi" href="javascript:void(0);"><img src="img/Citi_logo.png" alt="Citi Reserve Card"> </a>
+
+
+    </header><body>
+<div class="hero-image">
+<div class="wrapper">
+<!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+   <section class="reserve">
+   <img src="img/reserve_card.png" alt="Citi Reserve Card">
+       <div class="description">
+       <article>
+           <p class="title">CITI<sup>&reg;</sup> HILTON HHONORS<sup>&trade;</sup><br class="landscape">  RESERVE CARD</p>
+           <h1 class="card">2 NIGHTS</h1>
+           <h2 class="card">For a Great Weekend</h2>
+           <p>Earn 2 weekend night certificates, each good for 1 weekend night (standard room, double occupancy) at select Hilton HHonors<sup>&trade;</sup> hotels and resorts, after $2,500 in purchases within the first 4 months after account opening.</p>
+           <h3>$95 annual fee</h3>
+           <a class="apply" href="<%= pApplyNowReserve.GetStringURL() %>" target="_blank">Apply now</a>
+           <p class="small seepricing"><A href="#PricingInfo">See Pricing and Other Important Information for Details<sup>1</sup></a></p>
+
+   <div class="points">
+           <h1>10</h1>
+           <h2>HHONORS<br> <span class="bonus">Bonus</span><br> <span>Points</span></h2>
+           <p>per $1 spent on hotel stays within the Hilton Portfolio</p>
+   </div>
+   <div class="points">
+           <h1>5</h1>
+           <h2>HHONORS<br> <span class="bonus">Bonus</span><br> <span>Points</span></h2>
+           <p class="smaller">per $1 spent on airline and car rental purchases</p>
+   </div>
+   <div class="points">
+           <h1>3</h1>
+           <h2>HHONORS<br> <span class="bonus">Bonus</span><br> <span>Points</span></h2>
+           <p>per $1 spent on other purchases</p>
+   </div>
+           <p class="between">In addition to the HHonors Base Points you may earn for your stays.</p>
+       </article>
+       <article class="more">
+           <h1>Gold Status</h1>
+           <p>Enjoy HHonors Gold status as long as you're a Citi Hilton HHonors Reserve cardmember.</p>
+           <h1>Upgrade Faster</h1>
+           <p>Earn an upgrade to HHonors Diamond status when you make $40,000 or more in purchases each calendar year.</p>
+           <h1>Anniversary Bonus</h1>
+           <p>Earn an anniversary bonus of one weekend night (standard room, double occupancy) at select hotels and resorts within the Hilton Portfolio after you spend $10,000 on purchases each year (starting from your Annual Fee Date) and remain a cardmember.</p>
+           <h1>No Foreign Purchase Transaction Fees</h1>
+           <p>Save when you travel internationally.</p>
+           <h1>No Points Cap</h1>
+           <p>There's no limit to the HHonors Bonus Points you can earn.</p>
+       </article>
+       <h3>$95 annual fee</h3>
+           <a class="apply" href="<%= pApplyNowReserve.GetStringURL() %>" target="_blank">Apply now</a>
+           <p class="small desktop">Or call 1-866-642-7619</p>
+           <a href="tel:1-866-642-7619" style="text-decoration:none"><p class="small mobile">Call 866-642-7619</p></a>
+       </div>
+   </section>    </div>
+
+    <footer>
+    <section class="full">
+       <article class="footer-logos"><img class="desktop" src="img/footer-logos.png" alt="footer-logos"><img class="mobile" src="img/footer-logos-mobile.png" alt="footer-logos"></article>
+    </section>
+  <article class="wrapper">
+<div  id="PricingInfo">
+					<p class="title"><strong><sup>1</sup>Citi<sup>&reg;</sup> Hilton HHonors<sup>&trade;</sup> Reserve Card Pricing and Other Important Information</strong></p>
+	<p><strong>Pricing</strong> <br>
+	The standard variable APR for purchases for the Citi Hilton HHonors Reserve Card is 15.24% and also applies to balance transfers. The standard variable APR for cash advances is 25.24%. The variable Penalty APR is up to 29.99% and may be applied if you make a late payment or make a payment that is returned.  Minimum interest charge –$0.50. Cash advance fee – either $10 or 5% of the amount of each cash advance, whichever is greater. Balance transfer fee – either $5 or 3% of the amount of each transfer, whichever is greater. The annual fee for the Citi Hilton HHonors Reserve Card is $95.
+	</p>
+
+	<p>
+	<strong>Two Nights Certificate Offer</strong> </br>
+	Weekend night certificate(s) is (are) earned after purchase requirements have been met using your Citi Hilton HHonors Reserve Card. Weekend night certificate is valid for one (1) weekend night standard accommodation, double occupancy, subject to availability, at properties in the Hilton Portfolio, excluding those listed at HHonors.com/weekendcertificate. The weekend night certificate applies only to room rate and corresponding taxes, and does not apply to any applicable gratuities, resort fees or incidental charges. Weekend night certificate is valid for twelve (12) months after the date of issuance, as noted on the certificate. You must follow all terms stated on the certificate when redeeming or the certificate may not be honored. Purchases made using additional cards on the primary cardmember's account will count toward the primary cardmember's purchase requirements; however, additional cardholders are not eligible to earn a certificate. Your Citi Hilton HHonors Reserve card account must be open and current at the time the certificate is issued. For complete Terms and Conditions, please refer to your certificate.  Please allow 6 to 8 weeks after purchase requirements have been met to receive your certificate via email. If you do not have an email registered with HHonors, you must call 1-800-HHonors to receive and redeem your certificate.</br>
+	Weekend Night Certificates offer is not available if you have had a Citi Hilton HHonors Reserve Card account that was opened or closed in the past 18 months.
+	</p>
+
+	<p>
+	<strong>Citi<sup>&reg;</sup> Hilton HHonors<sup>&trade;</sup> Reserve Card Additional Details</strong> </br>
+	Hilton HHonors Bonus Points are earned on purchases except returned goods and services, cash advances, convenience checks, transferred balances, credits, fees and interest charges. Hilton HHonors Bonus Points will appear in your Hilton HHonors account within 4-6 weeks after you have met the purchase requirements and do not count toward elite tier qualification. Visit <a href="http://hhonors.com/terms" target="_blank">HHonors.com/Terms</a> for complete Terms and Conditions.
+	</p>
+
+					<p>To qualify for 10 HHonors Bonus Points per dollar spent, purchases including but not limited to charges at hotel restaurants, lounges, retail stores, or spas, must be charged to a cardmember’s hotel room bill and settled using the Citi Hilton HHonors Visa card upon checkout. Certain on-property vendors may not permit cardmember to charge to their hotel room, and such charges are not eligible to earn 10 HHonors Bonus Points per dollar spent.  Hotels are responsible for classifying transactions to enable Citi to recognize which ones qualify for 10 HHonors Bonus Points. If Citi receives a transaction without that information, Citi is unable to recognize that it qualifies. Citi reserves the right to determine which transactions qualify for 10 HHonors Bonus Points.</p>
+
+	<p>Airlines are defined as transactions from airlines or air carriers. Car Rentals are defined as transactions involving the short-term or long-term rentals of cars, trucks, or vans. We do not determine whether merchants appropriately identify transactions, but we do reserve the right to determine which purchases qualify for the 5 HHonors Bonus Points per dollar spent on these categories.</p>
+
+	<p>HHonors Gold status is complimentary as long as you are a Citi Hilton HHonors Reserve cardmember. If in any calendar year (January through December billing statements) your total spend on your Citi Hilton HHonors Reserve card reaches US$40,000 in purchases (posted to your January through December billing statements), you will be upgraded to Hilton HHonors Diamond status. You will retain Diamond status for the calendar year in which it was earned through the end of the following calendar year. Thereafter, in order to maintain Diamond status, you must meet the annual qualifying purchase requirement with your Citi Hilton HHonors Reserve card or meet the standard requirements outlined in the Hilton HHonors Program. Allow 4-6 weeks from completion of purchase requirements for your status to be upgraded. For more information on Gold or Diamond status and complete Terms and Conditions, visit <a href="http://hhonors.com/terms" target="_blank">HHonors.com/Terms</a>.</p>
+
+	<p>To receive the weekend night certificate, you must spend $10,000 on purchases within a year (starting from your Annual Fee Date) and your account needs to remain open for at least one billing period after your Annual Fee Date.  Your Annual Fee Date is the date that your card account is billed for your annual fee and resets each year on that date.  Please allow 6 to 8 weeks to receive your certificate via email.  If you do not have an email registered with HHonors, you must call 1-800-HHonors to receive and redeem your certificate.</p>
+
+		<p>HHonors points will not expire provided that the Hilton HHonors member takes one of the following actions within a 12 consecutive month period (1) stay at a hotel within the Hilton Portfolio, (2) earn HHonors points through any participating partner, (3) purchase HHonors points, or (4) donate points through The Hilton HHonors Giving Back Program. For complete details, visit <a href="http://hhonors.com/terms" target="_blank">HHonors.com/Terms</a>.</p>
+
+	<p>
+	Hilton HHonors and all trademarks of the Hilton Portfolio are owned by Hilton Worldwide, Inc. or its subsidiaries.
+
+
+	</p>
+					<p>Hilton HHonors<sup>&trade;</sup> membership, earning of Points &amp; Miles<sup>&trade;</sup> and redemption of Points are subject to HHonors Terms and Conditions, available at <a href="http://hhonors.com/terms" target="_blank">HHonors.com/Terms</a>. <br>
+					<br>Citibank is not responsible for products or services offered by other companies.</p>
+
+					<p>&copy;<%= glblYearOnly %> Citibank, N.A. Citi, Citibank and Citi with Arc Design are registered service marks of Citigroup Inc.<br><br> Visa<sup>&reg;</sup> is a registered trademark of Visa International Service.</p>
+
+					<p><sup>&trade;</sup> indicates a trademark of Hilton Worldwide.<br>
+					&copy;<%= glblYearOnly %> Hilton Worldwide. All rights reserved.</p>
+			</div>
+		</article>
+    </footer></div>
+</body>
+</html>
